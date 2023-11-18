@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RedisController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/increase', [RedisController::class, 'increase'])->name('increase');
+
+Route::get('/decrease', [RedisController::class, 'decrease'])->name('decrease');
