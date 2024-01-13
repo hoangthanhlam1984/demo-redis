@@ -4,6 +4,7 @@ services:
     rd-demo:
         image: hoangthanhlam1984/rd-demo:development
         restart: unless-stopped
+        entrypoint: ["php artisan queue:work"]
         ports:
             - 9002:9000
             - 81:80
