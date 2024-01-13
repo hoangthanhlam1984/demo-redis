@@ -19,5 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/increase', [RedisController::class, 'increase'])->name('increase');
-
 Route::get('/decrease', [RedisController::class, 'decrease'])->name('decrease');
