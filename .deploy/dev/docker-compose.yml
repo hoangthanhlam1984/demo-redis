@@ -13,13 +13,13 @@ services:
     rd-demo-schedule:
         image: hoangthanhlam1984/rd-demo:development
         restart: unless-stopped
-        command: php /var/www/redis-demo/artisan schedule:run
         user: 1000:1000
         working_dir: /var/www/redis-demo
+        command: php artisan schedule:run
 
     rd-demo-queue:
         image: hoangthanhlam1984/rd-demo:development
         restart: unless-stopped
-        command: php /var/www/redis-demo/artisan queue:work --tries=1
         user: 1000:1000
         working_dir: /var/www/redis-demo
+        command: php artisan queue:work --tries=1
