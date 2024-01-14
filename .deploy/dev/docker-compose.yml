@@ -9,3 +9,10 @@ services:
             - 81:80
         user: 1000:1000
         working_dir: /var/www/redis-demo
+
+    rd-demo-queue:
+        image: hoangthanhlam1984/rd-demo:development
+        restart: unless-stopped
+        command: ["php artisan queue:work --tries=1"]
+        user: 1000:1000
+        working_dir: /var/www/redis-demo

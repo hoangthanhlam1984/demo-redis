@@ -19,5 +19,3 @@ RUN php artisan optimize
 RUN chmod 777 ./storage -R
 
 USER www-data
-
-ENTRYPOINT ["php artisan queue:work"]
