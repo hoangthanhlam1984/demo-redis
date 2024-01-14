@@ -13,13 +13,13 @@ class RedisController extends Controller
     {
         $value = $increaseValueInCacheAction->execute('redis-key-value');
 
-        echo $value;
+        echo 'Giá trị sau khi tăng là: ' . $value;
     }
 
     public function decrease(Request $request, DecreaseValueInCacheAction $decreaseValueInCacheAction)
     {
         $value = $decreaseValueInCacheAction->execute('redis-key-value');
 
-        echo $value;
+        echo 'Giá trị sau khi giảm là: ' . $value;
     }
 }
